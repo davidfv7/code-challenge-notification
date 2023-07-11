@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - .frontend/src:/src
+    command: npm run dev
+    ports:
+      - "3333:3333"
+    environment:
+      NODE_ENV: development
+  api:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile.api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/src:/api/src
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: gila
+    ports:
+      - "5432:5432"

@@ -10,6 +10,8 @@ class Notification(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey(User.id))
+    message = Column(String)
+    category = Column(String)
     status = Column(String)
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
     send_at = Column(DateTime, default=datetime.datetime.utcnow)

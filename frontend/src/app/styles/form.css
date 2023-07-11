@@ -1,0 +1,15 @@
+.notificationForm {
+    display: block;
+    margin: auto;
+    width: 900px;
+}
+
+.notificationForm > form {
+    width:  100%;
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.notificationForm > form > div{
+    margin: 10px;
+}
