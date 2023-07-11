@@ -1,0 +1,18 @@
+[tool.pdm]
+
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "", email = ""},
+]
+dependencies = [
+    "fastapi[all]>=0.100.0",
+    "uvicorn[standard]>=0.22.0",
+    "sqlalchemy>=2.0.18",
+    "psycopg2-binary>=2.9.6",
+    "dotenv>=0.0.5",
+]
+requires-python = ">=3.9"
+license = {text = "MIT"}
