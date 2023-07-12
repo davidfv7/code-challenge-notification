@@ -14,7 +14,7 @@ import Snackbar from '@mui/material/Snackbar';
 export default function NotificationForm() {
     const categories = [
         { label: 'Sports' },
-        { label: 'Finances' },
+        { label: 'Finance' },
         { label: 'Movies' },
 
     ]
