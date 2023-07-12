@@ -23,7 +23,7 @@ export default function NotificationForm() {
     const [alertMesssage, setAlertMessage] = useState("");
     const [send] = useMessage();
     const [message, setMessage] = useState({
-        "category": "",
+        "category": categories[0].label,
         "message": ""
     });
     function handleClose() {
