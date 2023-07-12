@@ -4,10 +4,13 @@ from database.base import Base
 from fastapi.middleware.cors import CORSMiddleware
 
 from routes.notifications import notification_router
+from routes.messages import message_router
+from routes.users import user_router
 
 app = FastAPI()
 
 origins = ["*"]
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -18,6 +21,8 @@ app.add_middleware(
 )
 
 app.include_router(notification_router)
+app.include_router(message_router)
+app.include_router(user_router)
 
 
 Base.metadata.create_all(bind=engine)

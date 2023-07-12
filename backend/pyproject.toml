@@ -14,6 +14,8 @@ dependencies = [
     "psycopg2-binary>=2.9.6",
     "python-dotenv>=1.0.0",
     "pydantic>=2.0.2",
+    "celery>=5.3.1",
+    "redis>=4.6.0",
 ]
 requires-python = ">=3.9"
 license = {text = "MIT"}

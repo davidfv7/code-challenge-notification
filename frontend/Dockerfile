@@ -1,10 +1,18 @@
-FROM node:16-alpine
+# Use node alpine as it's a small node image
+FROM node:alpine
 
-WORKDIR /frontend
+# Create the directory on the node image 
+# where our Next.js app will live
+RUN mkdir -p /app
 
-COPY package*.json ./
-COPY next.config.js ./
+# Set /app as the working directory
+WORKDIR /app
 
+COPY package*.json /app
+COPY next.config.js /app
+COPY tsconfig.json /app
+
+# Install dependencies in /app
 RUN npm install
 
 COPY src/ .

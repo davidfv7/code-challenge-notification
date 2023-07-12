@@ -20,6 +20,10 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 
+def celery_connection():
+    return SessionLocal()
+
+
 def get_db():
     db = SessionLocal()
     try:
