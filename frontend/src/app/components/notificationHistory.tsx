@@ -15,7 +15,7 @@ import useNotifications from '../hooks/notifications';
 import {useState} from 'react';
 
 
-export default function LogHistory() {
+export default function NotificationHistory() {
   const [notifications , fetch] = useNotifications();
   const [page, setPage] = useState(0)
   const [rowsPerPage, setRowsPerPage] = useState(5)
@@ -45,7 +45,7 @@ export default function LogHistory() {
   }, [page, rowsPerPage])
   return (
     <div className='logContainer'>
-      <h1>Log History</h1>
+      <h1>Notification History</h1>
       <Button onClick={() => fetch(page + 1, rowsPerPage)}>Refresh</Button>
       <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       <TableContainer sx={{ maxHeight: 440 }}>

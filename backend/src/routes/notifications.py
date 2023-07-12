@@ -8,19 +8,9 @@ from schemas.notification import NotificationSchema
 
 notification_router = APIRouter()
 
-@notification_router.post("/notifications", status_code=status.HTTP_201_CREATED)
-async def create_notification(payload: NotificationSchema, db: Session = Depends(get_db)):
-    notification = Notification(**payload.dict())
-    db.add(notification)
-    db.commit()
-    db.refresh(notification)
-
-    return {"success": True, "notification": notification}
 
 @notification_router.get("/notifications")
 async def show_notifications(page: int = 1, size: int = 5, db: Session = Depends(get_db)):
+    '''Returns notifications and paginates depending on the page and size sent on the url'''
     records = db.query(Notification).offset((page - 1) * size).limit(size).all()
-    for record in records:
-        print("_______")
-        print(record.message_id)
     return { "records": records, "total": db.query(Notification).count()}

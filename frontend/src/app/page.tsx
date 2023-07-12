@@ -1,14 +1,14 @@
 
 import styles from './page.module.css'
 import NotificationForm from './components/form'
-import LogHistory from './components/logHistory'
+import NotificationHistory from './components/notificationHistory'
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
         <NotificationForm/>
-        <LogHistory />
+        <NotificationHistory />
       </div>
     </main>
   )
